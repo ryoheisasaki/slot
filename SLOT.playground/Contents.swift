@@ -17,7 +17,7 @@ class slotMachine {
     //大当たり払出し枚数
     var bonus = 100
     
-    
+    //1〜50までの乱数を付与し、amountOfCoinsが3枚以上の場合実行−3枚される関数
     func koyaku() {
         //ベットボタンを押す
         let randomNumber = Int.random(in: 1...50)
@@ -25,12 +25,11 @@ class slotMachine {
         if amountOfCoins < 3 {
             print("コインが足りません")
             return
-            
         }
         //賭けコインマイナス
         amountOfCoins -= 3
         
-        
+        //1回転ごとに付与される乱数
         switch randomNumber {
         case 1...10:
             amountOfCoins += bell
